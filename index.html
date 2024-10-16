@@ -1,0 +1,201 @@
+<html>
+
+<head>
+    <title>Login | Registration Form</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <haader class="stickIt">
+        <div class="nav">
+            <div class="imgDiv"><img src="img/zehntech-hz-white.png"></div>
+            <div class="menus">
+                <ul>
+                    <li>Services</li>
+                    <li>About Us</li>
+                    <li>Sucess Stories</li>
+                    <li>Insights</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <button class="loginBtn">Login</button>
+        </div>
+    </haader>
+    <div class="overlayDiv"></div>
+    <div class="loginModal">
+        <div class="loginFormEff">
+            <form>
+                <h1>Login Form</h1>
+                <input class="lip1" required style="margin-top: 100px;" type="text" placeholder="Username" />
+                <input class="lip2" required style="margin-top: 20px;" type="password" placeholder="Password" />
+                <p class="fp">Forgot password?</p>
+                <button style="margin-top: 60px;" class="loginEff lbtn">Login</button>
+                <p style="text-align: center; margin: 10px;">Not a member? <span class="fp">Signup now</span></p>
+            </form>
+
+        </div>
+        <div class="signFormEff">
+            <form>
+                <h1>Signup Form</h1>
+                <input class="sip1" required style="margin-top: 70px;" type="text" placeholder="Username" />
+                <input class="sip2" required style="margin-top: 20px;" type="email" placeholder="Email Address" />
+                <input class="sip3" required style="margin-top: 20px;" type="password" placeholder="Password" />
+                <input class="sip4" required style="margin-top: 20px;" type="password" placeholder="Confirm password" />
+                <button style="margin-top: 20px;" class="loginEff sbtn">Signup</button>
+
+            </form>
+
+        </div>
+        <div class="innerLoginModal">
+            <!-- <div class="btnCnt">
+                    <button>
+                        <div class="innerBtn"></div>
+
+                    </button>
+                    <button></button>
+                </div>
+                <div class="btnCntLayered">
+                    <button>Login
+
+                    </button>
+                    <button>Signup</button>
+                </div>
+
+                 -->
+
+            <div class="outer0">
+                <div class="outer1 positionO1">
+                    <button>
+                        <div class="btnEff"></div>
+                    </button>
+                    <button></button>
+                </div>
+                <div class="outer1 upperLayer">
+                    <button class="formLogin">Login</button>
+                    <button class="signBtn" style="color: black;">Signup</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="scrollDiv" style=></div>
+</body>
+<script>
+    var loginBtn = document.querySelector('.loginBtn');
+    var loginModal = document.querySelector('.loginModal');
+    var overlayDiv = document.querySelector('.overlayDiv');
+
+    console.log(loginBtn);
+    loginBtn.addEventListener('click', () => {
+        // console.log('clicked');
+        // overlayDiv.style.display = "block";
+        overlayDiv.style.opacity = "1";
+        overlayDiv.style.visibility = "visible";
+
+        // console.log(loginModal);
+        loginModal.style.transform = "translate(-50%,-40%) scale(1)";
+        // console.log(overlayDiv);
+
+    });
+    overlayDiv.addEventListener("click", () => {
+        // overlayDiv.style.display = "none";
+        overlayDiv.style.opacity = "0";
+        overlayDiv.style.visibility = "hidden";
+
+        loginModal.style.transform = "translate(-50%,-40%) scale(0)";
+    });
+    // var loginBtnVar = document.querySelector('.loginBtn');
+    // var overlayDivVar = document.querySelector('.overlayDiv');
+    // var loginModalVar = document.querySelector('.check');
+
+    // loginBtnVar.addEventListener('click',()=>{
+    //     // loginModalVar.classList.add("effectLoginModal");
+    //     overlayDivVar.style.display = "block";
+    //     loginModalVar.style.transform = "scale(200%)";
+
+
+    // });
+    var btnEff = document.querySelector('.btnEff');
+    var formLogin = document.querySelector('.formLogin');
+    var signBtn = document.querySelector('.signBtn');
+    var loginFormEff = document.querySelector('.loginFormEff');
+    var signFormEff = document.querySelector('.signFormEff');
+
+
+
+    formLogin.addEventListener('click', () => {
+        btnEff.style.left = "0%";
+        signBtn.style.color = "black";
+        formLogin.style.color = "white";
+        loginFormEff.style.left = "0%";
+        signFormEff.style.left = "100%";
+
+
+    });
+    signBtn.addEventListener('click', () => {
+        btnEff.style.left = "50%";
+        signBtn.style.color = "white";
+        formLogin.style.color = "black";
+        loginFormEff.style.left = "-100%";
+        signFormEff.style.left = "0%";
+
+    });
+    var sip1 = document.querySelector('.sip1');
+    var sip2 = document.querySelector('.sip2');
+    var sip3 = document.querySelector('.sip3');
+    var sip4 = document.querySelector('.sip4');
+    var sbtn = document.querySelector('.sbtn');
+
+    // console.log(sip1);
+    // console.log(sip2);
+    // console.log(sip3);
+    // console.log(sip4);
+
+    sbtn.addEventListener('click',()=>{
+        // console.log('start');
+    
+        if(sip1.value.length<3){
+            alert("Username must be atleast three characters long");
+        }else if(sip3.value.length<6){
+            alert("Password must be atleast three characters long");
+
+        }else if(sip3.value != sip4.value){
+            alert("Passwords Not Match");
+        }else{
+            alert("Signup Successful")
+        }
+        // alert(sip1.value +"<br>"+ sip1.value.length);
+        // console.log("Value is:  "+sip1.value +);
+        
+        // console.log('end');
+    });
+
+    var lip1 = document.querySelector('.lip1');
+    var lip2 = document.querySelector('.lip2');
+    var lbtn = document.querySelector('.lbtn');
+
+    // console.log(sip1);
+    // console.log(sip2);
+    // console.log(sip3);
+    // console.log(sip4);
+
+    lbtn.addEventListener('click',()=>{
+        // console.log('start');
+    
+        if(lip1.value.length<3){
+            alert("Invalid Username");
+        }else if(lip2.value.length<6){
+            alert("Invalid Password");
+
+        }else{
+            alert("Login Successful")
+        }
+    });
+
+
+
+
+
+</script>
+
+</html>
